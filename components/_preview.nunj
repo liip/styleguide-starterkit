@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Preview Layout</title>
+
+  {% if _config.env !== 'development' %}
+    <link rel="stylesheet" href="{{ '/common.css' | path }}">
+  {% endif %}
+</head>
+<body>
+  {{ yield }}
+
+  <script type="text/javascript" src="{{ '/common.js' | path }}"></script>
+</body>
+</html>
