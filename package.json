@@ -48,8 +48,5 @@
   "browserslist": [
     "last 2 versions",
     "IE 11"
-  ],
-  "dependencies": {
-    "kanbasu": "^1.6.1"
-  }
+  ]
 }
