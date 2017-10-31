@@ -94,8 +94,7 @@ module.exports = {
               outputPath: 'assets/',
               publicPath: '/',
             }
-          },
-          'svgo-loader'
+          }
         ]
       },
       {
