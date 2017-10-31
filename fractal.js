@@ -30,6 +30,7 @@ fractal.web.set('builder.dest', 'dist');
  */
 // Use Nunjucks as the template engine
 fractal.components.engine('@frctl/nunjucks');
+fractal.docs.engine('@frctl/nunjucks');
 // Look for templates with a ".nunj" extension
 fractal.components.set('ext', '.nunj');
 
