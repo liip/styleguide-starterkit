@@ -1,4 +1,5 @@
 <p>{{ text }}</p>
 
 {# Use the icon partial for easy inclusion #}
-{% render '@icon', { id: 'home' } %}
+{# {% render '@icon', { id: 'foo', class: 'bar' } %} #}
+{# Where "foo" is the icon file name without the extension #}
