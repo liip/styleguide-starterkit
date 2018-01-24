@@ -1,6 +1,7 @@
 const path = require('path');
 
 const fractal = module.exports = require('@frctl/fractal').create();
+const pkg = require(path.join(__dirname, 'package.json'));
 
 
 /*-------------------------------------------------------*\
@@ -11,6 +12,8 @@ const fractal = module.exports = require('@frctl/fractal').create();
  * Metadata
  */
 fractal.set('project.title', 'Styleguide Starterkit');
+// Provide the package.json "version" to the templates
+fractal.set('project.version', pkg.version);
 
 /**
  * Files location
