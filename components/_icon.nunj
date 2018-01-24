@@ -1,0 +1,3 @@
+<svg class="icon icon--{{ id }}{% if class %} {{ class }}{% endif %}">
+  <use xlink:href="{{ '/assets/icons.svg' | path }}#{{ id }}" />
+</svg>

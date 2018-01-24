@@ -1,1 +1,4 @@
 <p>{{ text }}</p>
+
+{# Use the icon partial for easy inclusion #}
+{% render '@icon', { id: 'home' } %}

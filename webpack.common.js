@@ -18,6 +18,7 @@ module.exports = {
   resolve: {
     modules: [
       path.resolve(__dirname, 'assets/scripts'),
+      path.resolve(__dirname, 'assets'),
       'node_modules'
     ],
     extensions: ['.js']
