@@ -40,6 +40,7 @@ module.exports = {
   entry: entry,
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     filename: '[name].js'
   },
   module: {
@@ -92,7 +93,6 @@ module.exports = {
             options: {
               name: '[name].[ext]',
               outputPath: 'assets/',
-              publicPath: '/',
             }
           }
         ]
