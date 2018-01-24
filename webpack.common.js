@@ -1,22 +1,9 @@
 const path = require('path');
-const glob = require('glob');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const browserslist = require('./package.json').browserslist;
 
-const entry = {
-  common: [
-    './assets/scripts/common.js',
-    './assets/scss/common.scss'
-  ],
-};
-
-// Skip icons if there’s none or Webpack will throw an error
-const icons = glob.sync('./assets/icons/**/*.svg');
-if (icons.length) {
-  entry.icons = icons;
-}
 
 // Extract CSS to a dedicated file when we’re not developing
 const extractSass = new ExtractTextPlugin({
@@ -24,10 +11,8 @@ const extractSass = new ExtractTextPlugin({
   disable: process.env.NODE_ENV === 'development'
 });
 
-// Always extract icons in a SVG file
-const extractIcons = new SpriteLoaderPlugin({
-  plainSprite: true
-});
+// Extract icons in a dedicated SVG file
+const extractIcons = new SpriteLoaderPlugin();
 
 module.exports = {
   resolve: {
@@ -37,7 +22,9 @@ module.exports = {
     ],
     extensions: ['.js']
   },
-  entry: entry,
+  entry: {
+    common: path.resolve(__dirname, 'assets/scripts/common.js'),
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
