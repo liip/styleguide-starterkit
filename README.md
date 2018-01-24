@@ -6,7 +6,7 @@ A starterkit to create web styleguides with [Fractal](http://fractal.build/) and
 - JavaScript bundling with Webpack and [Babel](http://babeljs.io/)
 - Sass compilation, including [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [SVG icons sprite](https://css-tricks.com/svg-symbol-good-choice-icons/) generation
-- Live reload everything for comfortable development
+- Live reload (with hot module replacement) for comfortable development
 
 ## Installation
 
@@ -50,7 +50,7 @@ npm run build
 
 The generated files go to the `dist` directory.
 
-## Learn more
+## Misc
 
 ### Browsers support
 
@@ -60,14 +60,24 @@ Check [browserslist’s documentation](https://github.com/ai/browserslist) to ch
 
 ### Icons
 
-Icons placed inside `assets/icons` are automatically combined into a sprite called `icons.svg`. You can easily use them with the following snippet:
+Icons placed inside `assets/icons` are combined into a sprite called `icons.svg` when referenced. To load them, either reference them in your JavaScript:
 
-```html
-<svg>
-  <use xlink:href="/assets/icons.svg#icon-id"></use>
-</svg>
+```js
+import 'icons/foo.svg';
 ```
 
-Replace `icon-id` with the name of your icon file.
+Or in your stylesheet:
 
-**Warning:** This method of including remote SVG file is not supported by Internet Explorer (not Edge). You may want to polyfill it with [svgxuse](https://github.com/Keyamoon/svgxuse).
+```scss
+background-image: url('../icons/foo.svg');
+```
+
+Webpack will automatically rewrite the links to the sprite with the correct identifier. See [svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader) documentation for more information.
+
+You can then easily use an icon in a template with the icon snippet:
+
+```nunj
+{% render '@icon', { id: 'foo', class: 'bar' } %}
+```
+
+**Warning:** This method of including remote SVG file is not supported by Internet Explorer 11 and below. You may want to polyfill it with [svgxuse](https://github.com/Keyamoon/svgxuse).
