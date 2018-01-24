@@ -7,10 +7,10 @@
   {% if _config.env !== 'development' %}
     <link rel="stylesheet" href="{{ '/common.css' | path }}">
   {% endif %}
+
+  <script type="text/javascript" src="{{ '/common.js' | path }}"></script>
 </head>
 <body>
   {{ yield }}
-
-  <script type="text/javascript" src="{{ '/common.js' | path }}"></script>
 </body>
 </html>
