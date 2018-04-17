@@ -1,0 +1,13 @@
+{
+  "increment": "conventional:angular",
+  "beforeChangelogCommand": "conventional-changelog -p angular -i CHANGELOG.md -s",
+  "changelogCommand": "conventional-changelog -p angular | tail -n +3",
+  "safeBump": false,
+  "npm": {
+    "publish": false
+  },
+  "buildCommand": "npm run build",
+  "src": {
+    "afterReleaseCommand": "npm run deploy"
+  }
+}
