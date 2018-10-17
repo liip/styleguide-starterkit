@@ -78,10 +78,12 @@ To deploy a build of the styleguide, simply replace the blank command in the `pa
 An example of a simple deploy command using `rsync`:
 
 ```json
-"deploy": "rsync -avzP --delete --exclude='.*' dist/ user@server.com:/var/www/html/my-styleguide"
+"deploy": "rsync -avz --delete --exclude='.*' dist/ user@server.com:/var/www/html/my-styleguide"
 ```
 
-You can also run it manually at any time with:
+⚠️ Notice the `--delete` flag which means all files not present locally will be deleted on the remote server. Be careful, this can leads to data loss!
+
+You can also deploy manually at any time by running:
 
 ```bash
 npm run deploy
