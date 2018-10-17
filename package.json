@@ -16,7 +16,7 @@
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=development concurrently 'node ./server.js' 'webpack-dev-server --hot'",
-    "build": "npm run build:fractal && npm run build:webpack",
+    "build": "NODE_ENV=production concurrently 'npm run build:fractal' 'npm run build:webpack'",
     "build:webpack": "NODE_ENV=production webpack",
     "build:fractal": "NODE_ENV=production fractal build",
     "release": "release-it",
