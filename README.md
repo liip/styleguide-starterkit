@@ -12,6 +12,8 @@ A starterkit to create web styleguides with [Fractal](http://fractal.build/) and
 
 ## Installation
 
+Prerequisites: [Node.js](https://nodejs.org/en/) >= 6, <= 10
+
 Inside the directory of your choice, install a copy of the starterkit with:
 
 ```bash
