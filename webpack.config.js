@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-const browserslist = require('./package.json').browserslist;
 
 module.exports = {
   mode: process.env.NODE_ENV,
@@ -28,15 +27,6 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: {
-          presets: [
-            ['env', {
-              targets: {
-                browsers: browserslist
-              }
-            }]
-          ]
-        }
       },
       {
         test: /\.scss$/,

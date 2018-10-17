@@ -90,7 +90,7 @@ npm run deploy
 
 ### Browsers support
 
-The browsers support is defined in the `package.json`, in the `browserslist` entry. It’s used both by Autoprefixer for the CSS and by babel-preset-env for the JavaScript.
+The browsers support is defined in `.browserslistrc`. It’s used both by [Autoprefixer](https://github.com/postcss/autoprefixer) for the CSS and by [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) for the JavaScript.
 
 Check [browserslist’s documentation](https://github.com/ai/browserslist) to change the browser support.
 
