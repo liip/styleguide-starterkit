@@ -32,7 +32,10 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-            loader: process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development',
+            }
           },
           'css-loader',
           {
@@ -83,9 +86,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-    }),
+    new MiniCssExtractPlugin(),
     new SpriteLoaderPlugin(),
   ],
   devServer: {

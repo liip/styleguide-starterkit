@@ -7,13 +7,11 @@
 
   <title>Preview Layout</title>
 
-  {% if _config.env !== 'development' %}
-    <link rel="stylesheet" href="{{ '/common.css' | path }}">
-  {% endif %}
-
-  <script type="text/javascript" src="{{ '/common.js' | path }}"></script>
+  <link rel="stylesheet" href="{{ '/common.css' | path }}">
 </head>
 <body>
   {{ yield | safe }}
+
+  <script type="text/javascript" src="{{ '/common.js' | path }}"></script>
 </body>
 </html>
