@@ -14,6 +14,6 @@
   <script type="text/javascript" src="{{ '/common.js' | path }}"></script>
 </head>
 <body>
-  {{ yield }}
+  {{ yield | safe }}
 </body>
 </html>
