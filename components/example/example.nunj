@@ -1,5 +1,6 @@
 <p>{{ text }}</p>
 
 {# Use the icon partial for easy inclusion #}
-{# {% render '@icon', { id: 'foo', class: 'bar' } %} #}
-{# Where "foo" is the icon file name without the extension #}
+{# {% render '@icon', { id: 'home', class: 'icon--small' } %} #}
+{# Where "home" is the icon file name without the extension #}
+{# Don’t forget to import your icons first in assets/scripts/common.js #}
