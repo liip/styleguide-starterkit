@@ -50,7 +50,9 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              includePaths: ['node_modules'],
+              sassOptions: {
+                includePaths: ['node_modules'],
+              }
             },
           },
         ],
